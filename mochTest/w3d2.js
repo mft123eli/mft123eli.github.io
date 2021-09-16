@@ -13,7 +13,7 @@ const maggie = new TreeNode('Maggie');
 abe.descendents.push(homer);
 homer.descendents.push(bart, lisa, maggie);
 //Question 1
-function printName(tree) {
+function nameInTree(tree) {
     if (tree.descendents === null) {
         console.log("name:", tree.value)
     }
@@ -21,20 +21,20 @@ function printName(tree) {
         
         console.log("name:", tree.value)
         for (let child of tree.descendents) {
-            printName(child)
+            nameInTree(child)
         }
     }
 }
  
-console.log(printName(abe));
+console.log(nameInTree(abe));
 
 //Question 2
 function contains(tree,name){
     if(tree.value===name)
         return true;
     if(tree.descendents && tree.descendents.length>0){
-        for(let item of tree.descendents){
-           if(contains(item,name))
+        for(let node of tree.descendents){
+           if(contains(node,name))
                return true;
         }
     }
@@ -66,12 +66,12 @@ function ListNode(value,next){
     this.value = value;
    
 }
-// let lisNode = new ListNode(abe.value)
-// let maggieNode = new ListNode("Maggie",null);
-// let lisaNode = new ListNode("Lisa",maggieNode);
-// let bartNode = new ListNode("Bart",lisaNode);
-// let homerNode = new ListNode("Homer",bartNode);
-// let abeNode =  new ListNode("Abe",homerNode);
+let lisNode = new ListNode(abe.value)
+let maggieNode = new ListNode("Maggie",null);
+let lisaNode = new ListNode("Lisa",maggieNode);
+let bartNode = new ListNode("Bart",lisaNode);
+let homerNode = new ListNode("Homer",bartNode);
+let abeNode =  new ListNode("Abe",homerNode);
 
 
 function createlinkedList(abe){
@@ -117,18 +117,36 @@ function treeModifier(tree, func) {
         return tree
     }
      
-    // function allCaps(node) {
-    //    console.log(node.value = node.value.toUpperCase());
-    // }
+    function allCaps(node) {
+       console.log(node.value = node.value.toUpperCase());
+    }
     function addStars(node) {
         console.log("***" + node.value + "***");
     }
-    // function reverseNode(node) {
-    //     console.log(node.value.split("").reverse().join(""));
-    // }
-    //treeModifier(abe, allCaps); //Cannot read property 'toUpperCase' of undefined
+    function reverseNode(node) {
+        console.log(node.value.split("").reverse().join(""));
+    }
+    treeModifier(abe, allCaps); //Cannot read property 'toUpperCase' of undefined
     treeModifier(abe, addStars);
-    //treeModifier(abe, reverseNode); //Cannot read property 'split' of undefined
+    treeModifier(abe, reverseNode); //Cannot read property 'split' of undefined
+
+     //Question 9
+    function addNumbers(...arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+     
+    let total = addNumbers(3, 2, 4, 6);
+    console.log(total);
+     
+    // rest in destructuring assignment.
+     
+    let [num1, num2, ...rest] = [10, 20, 30, 40];
+     
+    console.log(rest) 
     
     
 
