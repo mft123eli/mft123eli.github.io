@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <div> <b>First Value</b> </div>
+        <br> <input id="first">
+        <div> <br> <b>Second Value </b> </div>
+        <br> <input id="second">
+        <div> <br> <b>Operations:</b> </div>
+        <input type="button" value="+"  onclick= "addition()">
+        <input type="button" value="-" onclick= "subtraction()">
+        <input type="button" value="*" onclick= "multiplication()">
+        <div> <br> <b> Result </b> </div>
+        <br> <input id="res" >
+ 
+ <script>
+
+     function addition(){
+        let valueOne= document.getElementById("first").value
+        let valueTwo= document.getElementById("second").value
+         let sum=parseInt(valueOne) + parseInt(valueTwo);
+         document.getElementById("res").value=sum;
+
+    }
+    function subtraction(){
+        let valueOne= document.getElementById("first")
+        let valueTwo= document.getElementById("second")
+
+     let sub=parseInt(valueOne.value) - parseInt(valueTwo.value);
+     document.getElementById("res").value=sub;
+
+}
+    function multiplication(){
+        let valueOne= document.getElementById("first")
+        let valueTwo= document.getElementById("second")
+
+     let mul=parseInt(valueOne.value) * parseInt(valueTwo.value);
+     document.getElementById("res").value=mul;
+
+}
+ </script>
+        
+    </body>
+</html>

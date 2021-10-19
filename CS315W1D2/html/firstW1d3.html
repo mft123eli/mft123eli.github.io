@@ -1,0 +1,30 @@
+<html>
+    <head>
+      
+    </head>
+    <body>
+        <div> <br> Input </div>
+        
+        <br> <input id="text">
+
+        <div> <br> Output </div>
+        
+        <br> <textarea rows = "3" id= "output"></textarea>
+        
+
+       <div> <br> <input    onclick="addInput()" value="Click to add"> </div>
+            
+        <script>
+            function addInput (){
+
+            const getInput=document.getElementById("text").value;
+        
+               document.getElementById("output").value =getInput;
+               document.getElementById("text").value =" ";
+
+
+            }
+        </script> 
+        
+        </body>
+        </html>

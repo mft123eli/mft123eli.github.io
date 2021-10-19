@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>My First Project</title>
+
+</head>
+
+<body>
+    <!-- <div id="myDiv">
+        <p>
+            1
+        </p>
+        <span>
+            2
+        </span>
+        <input type="button" value="Click Me" id='myButton' onclick=""/>
+    </div> -->
+
+
+    <table id="table" border="2">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <script>
+
+        // function createH1() {
+        //     const myDiv = document.getElementById('myDiv');
+
+        //     const h1 = document.createElement("h1");
+        //     const textnode = document.createTextNode("manipulating dom");
+
+        //     h1.appendChild(textnode);
+        //     myDiv.appendChild(h1)
+        // }
+
+        // function createDiv(){
+        //     const myDiv = document.getElementById('myDiv');
+
+        //     const div = document.createElement("div");
+        //     const textnode = document.createTextNode("another div");
+
+        //     div.appendChild(textnode);
+        //     myDiv.appendChild(div)
+        // }
+
+        // const myButton = document.getElementById('myButton');
+        // myButton.addEventListener('click',createH1);
+        // myButton.addEventListener('click',createDiv);
+
+
+        
+
+     //   console.log(myDiv.children)
+
+        // console.log(myDiv.children);
+        // console.log(myDiv.childNodes);
+    </script>
+
+</body>
+
+</html>
+
+<script>
+        let table = document.getElementById('table')
+       
+        //tr
+        let row = table.insertRow(); 
+
+        //td
+        let cell = row.insertCell();
+        let text = document.createTextNode(5);
+        cell.appendChild(text);
+
+        //td
+        let cell2 = row.insertCell();
+        let text2 = document.createTextNode(6);
+        cell2.appendChild(text2);
+
+
+
+
+    // const myDiv = document.getElementById('myDiv');
+    // // console.log(document.body.childNodes)
+    // // console.log(myDiv.children[0].innerText)
+
+    // var node = document.createElement("p");
+    // node.setAttribute('id', 'gggg')
+    // var textnode = document.createTextNode("new paragraph");
+    // node.appendChild(textnode);
+    // document.getElementById("myDiv").appendChild(node);
+</script>
